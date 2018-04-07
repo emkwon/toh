@@ -16,15 +16,18 @@
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
 </ul>
-<div *ngIf="selectedHero"> <!--<div *ngIf="selectedHero !== null || selectedHero !== undefined"> -->
-  <h2>{{selectedHero.name | uppercase}}</h2>
-  <div>
-    <span>id: </span>{{selectedHero.id}}
-  </div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" type="text" placeholder="name" >
-    </label>
+<!--<div *ngIf="selectedHero"> --><!--<div *ngIf="selectedHero !== null || selectedHero !== undefined"> -->
+  <!--  <h2>{{selectedHero.name | uppercase}}</h2>
+    <div>
+      <span>id: </span>{{selectedHero.id}}
+    </div>
+
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedHero.name" type="text" placeholder="name" >
+      </label>
+    </div>
   </div>
-</div>
+  -->
