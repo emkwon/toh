@@ -10,8 +10,21 @@
   </label>
 </div>
 -->
-<u class="heroes">
-  <li *ngFor="let hero of heroes">
+<ul class="heroes">
+  <!--<li *ngFor="let hero of heroes" onclick="alert('hi')"> -->
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
-</u>
+</ul>
+<div *ngIf="selectedHero"> <!--<div *ngIf="selectedHero !== null || selectedHero !== undefined"> -->
+  <h2>{{selectedHero.name | uppercase}}</h2>
+  <div>
+    <span>id: </span>{{selectedHero.id}}
+  </div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" type="text" placeholder="name" >
+    </label>
+  </div>
+</div>
