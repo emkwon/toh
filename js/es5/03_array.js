@@ -43,7 +43,15 @@ var books = [
 
 
 // 11. 제목앞에 판매순위를 등수를 붙인 새로운 배열을 생성하시오.(힌트: map)
+var book = {title:"자바의 정석", price: 35000, auth:"정석", order:3};
+// var temp = book; // 주소값 할당
+// book.title = "1등 " + book.title;
+//var temp = Object.assign({}, book); // 새로운 객체 생성
+// var temp = Object.assign({}, book, {title:"1등 " + book.title}); // 새로운 객체 생성
+var temp = {...book};
 
+console.log(book);
+console.log(temp);
 
 
 // 12. 새로운 배열을 만들되 3등안에 있는것만 따로 만든다. (힌트: filter)
